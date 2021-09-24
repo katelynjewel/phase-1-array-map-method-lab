@@ -12,5 +12,26 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  let formattedArray = tutorials.map(formatTutorial);
+  return formattedArray
+};
+
+function formatWord(word) {
+  return word.charAt(0).toUpperCase() + (word.slice(1));
+  
 }
+
+function formatTutorial(element) {
+  let arry = element.split(' ');
+  return arry.map(formatWord).join(' ');
+}
+
+console.log(titleCased());
+
+// function toTitleCase(str) {
+//   return str.toLowerCase().split(' ').map(function(word) {
+//     return (word.charAt(0).toUpperCase() + word.slice(1));
+//   }).join(' ');
+// }
+
+// console.log(toTitleCase("lets get down to business"));
